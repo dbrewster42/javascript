@@ -216,24 +216,24 @@ function doMath(num, num2, arr) {
 	var rando = Math.floor(Math.random() * 4); 
 	if (rando == 0){
 		console.log("add");
-		console.log(add(num, num2));
+		return add(num, num2);
 	}
 	if (rando == 1){
 		console.log("subtract");
-		console.log(subtract(num, num2));
+		return subtract(num, num2);
 	}
 	if (rando == 2){
 		console.log("multiply");
-		console.log(multiply(num, num2));
+		return multiply(num, num2);
 	}
 	if (rando == 3){
 		console.log("divide");
-		console.log(divide(num, num2));
+		return divide(num, num2);
 	}
 };
-doMath(8, 4, operations)
-doMath(8, 4, operations)
-doMath(8, 4, operations)
-doMath(8, 4, operations)
+console.log(doMath(8, 4, operations))
+console.log(doMath(8, 4, operations))
+console.log(doMath(8, 4, operations))
+console.log(doMath(8, 4, operations))
 
 
