@@ -213,8 +213,20 @@ function dataTypes(){
 // fn(y) that takes another single parameter y.  This inner function should compute the product of it's parameter with the 
 // parameter passed into multiple.  Use this returned "first-class" function to compute triples of any given number.
 
-//your code...
-
+multiple = function(x){    
+    function fn(y){
+        return x * y;
+    }
+    return fn(3)
+}
+var x = multiple(5)
+console.log(x)
+function triple(x){
+    return x * 3
+}
+console.log(triple(x))
+var y = triple(x)
+console.log(y)
 
 // 2. Write an outer function called stockGain that has cost basis (basis) as a parameter; declare a variable called message 
 // that holds " is how much the stock has increased".  Return an inner function with years (yrs) as a parameter and declare a 

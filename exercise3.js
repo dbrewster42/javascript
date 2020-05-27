@@ -3,81 +3,108 @@
 /************************************************************* */
 
 // Problem 1:
-// Write a JavaScript function that determines whether a string is empty. If the string is empty, the output should be true, otherwise it should return false. 
+// Write a JavaScript function that determines whether a string is empty. If the string is empty, the output should be true,
+// otherwise it should return false. 
 
 
 
-//your code...
-
-
-
-
+function ifEmpty(str){
+	if (str.isEmpty())
+		return true
+	else
+		return false
+}
 
 /************************************************************* */
 
 // Problem 2:
-// Declare a variable that holds a string (e.g., ‘Learning JavaScript is fun!’). Replace a word so that the output uses the new word instead (e.g., ‘Learning JavaScript is cool!). 
+// Declare a variable that holds a string (e.g., ‘Learning JavaScript is fun!’). Replace a word so that the output 
+//uses the new word instead (e.g., ‘Learning JavaScript is cool!). 
 
-
-
-//your code...
-
-
-
+function newStr(str){
+	var newStr = ""
+	var arrs = str.split(" ")
+	for (let i=0; i<arrs.length-1; i++){
+		newStr += arrs[i] + " "
+	}
+	newStr += "cool!"
+	return newStr;
+}
+console.log(newStr("Learning JavaScript is fun!"));
+///****************str.replace(cool, fun) would have been easier
 
 /************************************************************* */
 // Problem 3:
-// Write a function that declares an array of numbers from one to five and returns another array with the squared value of each number from the first array. Use an arrow function and one of the built-in array methods. 
+// Write a function that declares an array of numbers from one to five and returns another array with the squared 
+// value of each number from the first array. Use an arrow function and one of the built-in array methods. 
 
-
-
-//your code...
-
-
-
-
-
+hello = () => {
+	arr = []
+	bigArr = []
+	for (let i=1; i<6; i++){
+		arr.push(i)
+		p = i * i
+		bigArr.push(p)
+	}
+	return [arr, bigArr]
+}
 
 /************************************************************* */
 // Problem 4:
-// Now declare another array of numbers that has the following numbers: 1, 3, 5, 7, 9, 1, 3, 5. Write a JavaScript program that returns an array of the numbers that are greater than 3. Use an arrow function and one of the built-in array methods.
+// Now declare another array of numbers that has the following numbers: 
+//1, 3, 5, 7, 9, 1, 3, 5. Write a JavaScript program that returns an array of the 
+//numbers that are greater than 3. Use an arrow function and one of the built-in array methods.
 
-
-
-//your code...
-
-
-
-
-
+arr = [1, 3, 5, 7, 9, 1, 3, 5]
+greater = (arr) => {
+	newArr = []
+	for (let i=0; i<arr.length; i++){
+		if (arr[i] > 3)
+			newArr.push(arr[i])
+	}
+	return newArr
+}
+console.log(greater(arr))
 
 /************************************************************* */
 // Problem 5:
-// Now declare another array of numbers that has any 5 numbers. Write a JavaScript program that returns the sum of those numbers. Use an arrow function and one of the built-in array methods. 
+// Now declare another array of numbers that has any 5 numbers. Write a JavaScript program 
+//that returns the sum of those numbers. Use an arrow function and one of the built-in array methods. 
 
-
-
-//your code...
-
-
-
-
-
+other = [5, 3, 1, 4, 7]
+greater = (arr) => {
+	let sum = 0;
+	for (let i =0; i<arr.length; i++){
+		sum += arr[i]
+	}
+	return sum;
+}
+console.log(greater(other))
 
 /************************************************************* */
 // Problem 6:
-// DNA is made up of base pairs where every G is paired with a C and every T is paired with an A. 
+// DNA is made up of base pairs where every G is paired with a C and every T is paired 
+//with an A. 
 
-// Write a function that takes in a DNA string as a parameter and returns an array with the complementary strand. For example, a string of "GCTA" would return an array of ["C", "G", "A", "T"].  
+// Write a function that takes in a DNA string as a parameter and returns an array with 
+// the complementary strand. For example, a string of "GCTA" would return an array of 
+// ["C", "G", "A", "T"].  
 
-
-
-//your code...
-
-
-
-
-
+function pairs(str){
+	arr = []
+	for (let i=0; i<str.length; i++){
+		if (str.charAt(i) == 'G')
+			arr.push('C')
+		else if (str.charAt(i) == 'C')
+			arr.push('G')
+		else if (str.charAt(i) == 'A')
+			arr.push('T')
+		else if (str.charAt(i) == 'T')
+			arr.push('A')
+	}
+	return arr
+}
+console.log(pairs("GCTA"))
 
 /************************************************************* */
 // Problem 7:
