@@ -236,7 +236,7 @@ console.log(y)
 //and a number for the number of years.  Run the function returned by the higher order function to display the future value of the stock.  
 function stockGain(basis, yrs){
     var message = " is how much the stock has increased";
-    function growthRate(yrs){
+    return function growthRate(yrs){
         var r = .05;
         var increase = 0;
         let start = basis
@@ -247,9 +247,10 @@ function stockGain(basis, yrs){
         }
         console.log (increase + message)
         return increase;
-    }
-    return growthRate(yrs);
+    }   
 }
 const basis = 1000
-var futureValue = stockGain(basis, 5) + basis;
+var futureValue = stockGain(basis)(5) + basis;
 console.log(futureValue);
+//stockGain seems to me like it is only the increase and not the total value, whereas futureValue should be the actual worth of the stock
+//aka the increase plus the basis, so I added on the little extra to the variable value

@@ -5,17 +5,7 @@
   <head>
     <meta charset="utf-8">
     <title>Shopping list example</title>
-    <style>
-      li {
-        margin-bottom: 10px;
-      }
-
-      li button {
-        font-size: 8px;
-        margin-left: 20px;
-        color: #666;
-      }
-    </style>
+    <link rel="stylesheet" type="text/css" href="shopping-list.css">
   </head>
   <body>
 
@@ -24,10 +14,19 @@
     <div>
       <label for="item">Enter a new item:</label>
       <input type="text" name="item" id="item">
-      <button>Add item</button>
+      <button id="but">Add item</button>
     </div>
-
-    <ul>
+    <script>
+      var ul = document.getElementById("ul")
+      var button = document.getElementById("but")
+      var item = document.getElementById("item")
+      button.addEventListener("click", whatToDoOnClick);
+      function whatToDoOnClick() {             
+        console.log(item.value)
+        alert("You Did it!")
+      }
+    </script>
+    <ul id="ul">
 
     </ul>
 
