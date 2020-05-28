@@ -40,7 +40,7 @@ var answer = function(a, b){
 }
 var f = first(30, 2, 20)
 var s = second(10, 2)
-//console.log(f, s)
+console.log(f, s)
 console.log(answer(f, s))
 
 /************************************************************* */
@@ -64,7 +64,7 @@ console.log("0", "truthy because again it is a string")
 console.log(!"", "Truthy because it is a double negative")
 {}
 console.log({}, "Ummm, falsy I think since it is an empty expression")
-() => {console.log("hello TEKcamp!");}
+// () => {console.log("hello TEKcamp!");}
 console.log(() => {console.log("hello TEKcamp!")}, "truthy because an arrow functio returns value by default")
 125
 console.log(125, "truthy, because any non 0 value is true")
@@ -239,15 +239,17 @@ function stockGain(basis, yrs){
     function growthRate(yrs){
         var r = .05;
         var increase = 0;
+        let start = basis
         for (i=0; i<yrs; i++){
             increase = basis * r + increase
             console.log(increase)
-            basis = basis + increase
+            basis = start + increase
         }
-        console.log (increase)
-        return increase + message;
+        console.log (increase + message)
+        return increase;
     }
     return growthRate(yrs);
 }
-var futureValue = stockGain(1000, 5);
+const basis = 1000
+var futureValue = stockGain(basis, 5) + basis;
 console.log(futureValue);

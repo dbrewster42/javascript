@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+	var first = function(a, b, c){
+    return (a + b) * c;
+}
+var second = function(a, b){
+    return Math.pow(a, b)
+}
+var answer = function(a, b){
+    return a / b;
+}
+var f = first(30, 2, 20)
+var s = second(10, 2)
+// console.log(f, s)
+// console.log(answer(f, s))
+
+
+// 		20 
+// console.log(20, "truthy, because any non 0 value is true")
+// 0 
+// console.log(0, "falsy, because 0 = false")
+// "zero"; 
+// console.log("zero", "truthy, because it is a string")
+// const zero = 20; 
+// console.log(zero, "truthy, because it is not 0")
+// null 
+// console.log(null, "falsy because null is a false statement")
+// "0"
+// console.log("0", "truthy because again it is a string")
+// !"" 
+// console.log(!"", "Truthy because console log printed it as true, originally I said falsy since ! is a falsy statement")
+// {}
+// console.log({}, "Ummm, falsy I think since it is an empty expression")
+// a = () => {console.log("hello TEKcamp!");}
+// console.log(() => {console.log("hello TEKcamp!")}, "truthy because an arrow functio returns value by default")
+// 125
+// console.log(125, "truthy, because any non 0 value is true")
+// undefined
+// console.log(undefined, "falsy because its not defined")
+// ""
+// console.log("", "falsy since it is an empty expression")
+
+
+// const age = 78;
+// console.log(age > 21 ? 'adult' : 'minor')
+// console.log(age > 13 && age < 19 ? 'teen' : 'not a teenager')
+// age > 65 ? console.log("retired") : console.log("still working")
+
+function tips(arr){	
+	arr2 = []
+	var x;
+	for (i=0; i<arr.length; i++){
+		if (arr[i] < 50)
+			x = arr[i] * .2
+					
+		else if (arr[i] < 200)
+			x = arr[i] * .15
+		else
+			x = arr[i] * .1
+		arr2.push(x)
+		arr[i] = arr[i] + x;	
+	}
+	
+	return [arr2, arr];
+}	
+console.log(tips([124, 48, 264]))
+
+
+var devon = {
+    name: 'Devon Brewster',
+    age: 32,
+    gender: "Male",
+    hobbies: ['reading', 'sports', 'playing video games'],
+    profession: "Software Developer",
+    education: "Coding Boot Camp",
+    learn: function(name){
+        console.log(this.name);
+    },
+    listHobbies: function(hobbies){
+        for (let i=0; i<this.hobbies.length; i++)
+            console.log(this.hobbies[i])
+    }
+}
+// console.log(devon)
+// devon.learn();
+// devon.listHobbies();
+cowboys = {
+    name: "Cowboys",
+    city: "Dallas",
+    SuperBowls: 5,
+    SBappearances: 8,
+    owner: "Jerry Jones",
+    division: "NFC East",
+    info: function(name, city, division){
+        console.log("The " + this.city, this.name, "play in the " + this.division)
+    },
+    SBlosses: function(SuperBowls, SBappearances){
+        return this.SBappearances - this.SuperBowls;
+    }
+}
+// console.log(cowboys);
+// console.log(cowboys.SBlosses())
+// cowboys.info();
+// function stockGain(basis){
+//     var message = " is how much the stock has increased";
+//     return growthRate = function(years){
+//         var r = .05;
+//         var increase = 0;
+//         for (i=0; i<years; i++){
+//             increase = basis * r + increase
+//             basis = basis + increase
+//         }
+//         return increase;
+//     }
+//     // return growthRate + message;
+// }
+// console.log(growthRate(5));
+function stockGain(basis, yrs){
+    var message = " is how much the stock has increased";
+    function growthRate(yrs){
+        var r = .05;
+        var increase = 0;
+        for (i=0; i<yrs; i++){
+            increase = basis * r + increase
+            console.log(increase)
+            basis = basis + increase
+        }
+        console.log (increase)
+        return increase + message;
+    }
+    return growthRate(yrs);
+}
+var futureValue = stockGain(1000, 5);
+console.log(futureValue);
+
+
+	</script>
+
+
+</body>
+</html>

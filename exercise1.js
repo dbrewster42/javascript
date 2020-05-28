@@ -112,7 +112,7 @@
 				console.log("This is a " + this._color + " " + this.make + " " + this.model + " made in " + this._year + ".")
 			}
 		}
-		var newCar = new Car("Mitsubishi", "Ecliplse", "blue")
+		const newCar = new Car("Mitsubishi", "Ecliplse", "blue")
 		newCar.year = "2011"
 		newCar.getInfo()
 		var yourCar = new Car("Honda", "Civic")
@@ -182,7 +182,7 @@ const foodArray = [ 'potatoes', 'tamales', 'lemon','strawberries','chocolate', '
 	var arr = Object.values(val)
 	var school = arr[0]
 	console.log(school) //only value
-	foodArray[6] = 'TEKcamp'
+	foodArray[6] = school
 
 const adjectiveArray = [ 'salty', 'spicy', 'sour', 'sweet', 'rich','creamy','amazing'];
 // Using both nameArray and adjectiveArray, make a
