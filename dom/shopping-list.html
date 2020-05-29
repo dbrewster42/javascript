@@ -6,32 +6,55 @@
     <meta charset="utf-8">
     <title>Shopping list example</title>
     <link rel="stylesheet" type="text/css" href="shopping-list.css">
+    
   </head>
   <body>
-
+    
     <h1>My shopping list</h1>
 
     <div>
       <label for="item">Enter a new item:</label>
       <input type="text" name="item" id="item">
-      <button id="but">Add item</button>
+      <button id="but" onclick="wOnClick()">Add item</button>
     </div>
-    <script>
-      var ul = document.getElementById("ul")
-      var button = document.getElementById("but")
-      var item = document.getElementById("item")
-      button.addEventListener("click", whatToDoOnClick);
-      function whatToDoOnClick() {             
-        console.log(item.value)
-        alert("You Did it!")
-      }
-    </script>
-    <ul id="ul">
+
+    <ul id="ul">   
 
     </ul>
+  <script type="text/javascript">
+    const ul = document.getElementById("ul")
+    const but = document.getElementById("but")
+    const item = document.getElementById("item")
 
-    <script>
+  console.log(but)
+  but.onclick = function() {        
+    console.log(item.value)
+    let inputValue = item.value
 
-    </script>
+    const li = document.createElement('li');
+    const span = document.createElement('span');
+    const button2 = document.createElement('button');
+    li.appendChild(span)
+    li.appendChild(button2)
+    
+    ul.appendChild(li)
+    span.textContent = inputValue;
+    button2.textContent = "Delete"              
+    
+    item.value = ""  
+    alert("You Did it!")
+    button2.onclick = function(e){
+      ul.removeChild(li)
+      alert("You KILLED it!")
+    }
+
+    item.focus();
+  }
+  </script>
+
+    <!-- <li id="li"></li>
+    <span id="span"></span>
+    <button id="but2" onclick="secondClick()">Delete</button>
+ -->
   </body>
 </html>

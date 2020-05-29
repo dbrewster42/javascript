@@ -175,7 +175,7 @@ mapObj.set(obj,"object");
 console.log(mapObj.has(obj)); 
 //The above console.log() statmeent returns false.  Write another console.log() statement explaining why this line of code prints false.  
 //Refactor the code on line 106, so you can successfully check to see if {company : "TEKsystems"} exists in the mapObj.
-console.log("It was false because the obj was set incorrectly", mapObj)
+console.log("It was false because the obj was nested", mapObj)
 //your code...
 
 //loop through the mapObj and create a new array of only the data types, leaving out the example keys of the mapObj.  Use array
