@@ -118,41 +118,45 @@ numbers[numbers.length-3] = 3
 numbers[numbers.length-4] = 2
 numbers[numbers.length-5] = 1
 //console.log(numbers)
-function numerize(arr) {
-    for(let i=0; i<arr.length; i++){
-    	if (typeof arr[i] != 'number'){
-    		//console.log(i, arr[i], typeof arr[i])
-    		arr[i] = parseInt(arr[i], 10)
-    		if (!arr[i]){    	
-    			//console.log("yup")		
-    			let j = i
-    			while (j < arr.length){
-    				arr[j] = arr[j+1]
-    				j++
-    			}
-    			arr.pop()
-    			i--
-    			
-    		}
-    	}
-    }
-    return arr
-
+// function numerize(arr) {
+//     for(let i=0; i<arr.length; i++){
+//     	if (typeof arr[i] != 'number'){
+//     		//console.log(i, arr[i], typeof arr[i])
+//     		arr[i] = parseInt(arr[i], 10)
+//     		if (!arr[i]){    	
+//     			//console.log("yup")		
+//     			let j = i
+//     			while (j < arr.length){
+//     				arr[j] = arr[j+1]
+//     				j++
+//     			}
+//     			arr.pop()
+//     			i--    			
+//     		}
+//     	}
+//     }
+//     return arr
+// }
+function numerize2(arr){
+	const noS = arr.filter(num => typeof(num) == 'number')
+	return noS
 }
-const fun = numerize(numbers)
-//console.log(fun)
+// const fun = numerize(numbers)
+const fun2 = numerize2(numbers)
+// console.log(fun)
+console.log(fun2)
 function maxNumber(arr) {	
 	let maxi = Math.max(...arr)	
 	return maxi
 }	
-console.log(maxNumber(fun))	
+console.log(maxNumber(fun2))	
 // 7.b -Write a function that sorts the given numbers array.  Allow the function to sort the array in descending order
 
 function sortNums(arr, desc=false) {
     res = arr.sort(function(a, b){return b-a})
     return res
 };
-console.log(sortNums(fun))
+console.log(sortNums(fun2))
 
 
 
