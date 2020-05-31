@@ -3,10 +3,10 @@ const start = document.getElementById("button1")
 const stop = document.getElementById("stop")
 const reset = document.getElementById("reset")
 
-var clock = start.onclick = function(){
+start.onclick = function(){
 	let seconds = 1
 	let minutes = 0
-	setInterval(function() {
+	const clock = setInterval(function() {
 		
 		if (minutes == 0){
 			if (seconds < 10)
@@ -30,14 +30,15 @@ var clock = start.onclick = function(){
 				seconds = 0				
 			}
 		}
-
-
 	}, 1000);
+
 	reset.onclick = function(){
 		seconds = 0
+		minutes = 0
 	}
+
 	stop.onclick = function(){		
-		let display = seconds
+		const display = minutes + " minutes and " + seconds + " seconds"
 		timer.innerHTML = display
 		clearInterval(clock)
 		// alert("You stopped the clock!")
