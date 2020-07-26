@@ -5,30 +5,37 @@
 // Problem 1:
 // Write a JavaScript function that determines whether a string is empty. If the string is empty, the output should be true,
 // otherwise it should return false. 
-function ifEmpty(str){
-	if (str)
-		return false
-	else
-		return true
-}
+// function ifEmpty(str){
+// 	if (str)
+// 		return false
+// 	else
+// 		return true
+// }
+const isEmpty = string => string.length<1; 
+// console.log(ifEmpty(""))
+console.log(isEmpty);
 
-console.log(ifEmpty(""))
 /************************************************************* */
 
 // Problem 2:
 // Declare a variable that holds a string (e.g., ‘Learning JavaScript is fun!’). Replace a word so that the output 
 //uses the new word instead (e.g., ‘Learning JavaScript is cool!). 
 
-function newStr(str){
-	var newStr = ""
-	var arrs = str.split(" ")
-	for (let i=0; i<arrs.length-1; i++){
-		newStr += arrs[i] + " "
-	}
-	newStr += "cool!"
-	return newStr;
-}
-console.log(newStr("Learning JavaScript is fun!"));
+// function newStr(str){
+// 	var newStr = ""
+// 	var arrs = str.split(" ")
+// 	for (let i=0; i<arrs.length-1; i++){
+// 		newStr += arrs[i] + " "
+// 	}
+// 	newStr += "cool!"
+// 	return newStr;
+// }
+// console.log(newStr("Learning JavaScript is fun!"));
+
+//part2
+let string = "Learning JavaScript is fun!"; 
+string = string.replace('fun!', 'cool!'); 
+console.log(string)
 
 /************************************************************* */
 // Problem 3:
@@ -46,6 +53,14 @@ hello = () => {
 	return [arr, bigArr]
 }
 console.log(hello())
+
+//part2
+const arrayDeclarer = (arr) => { 
+   return arr.map(val => Math.pow(val, 2)); 
+}
+
+
+arrayDeclarer([1,2,3,4,5]) 
 /************************************************************* */
 // Problem 4:
 // Now declare another array of numbers that has the following numbers: 
@@ -63,6 +78,10 @@ greater = (arr) => {
 }
 console.log(greater(arr))
 
+//part2
+let filtered = arr.filter(val => val>3)
+console.log(filtered) // prints [5, 7, 9, 5]
+
 /************************************************************* */
 // Problem 5:
 // Now declare another array of numbers that has any 5 numbers. Write a JavaScript program 
@@ -77,6 +96,10 @@ summer = (arr) => {
 	return sum;
 }
 console.log(summer(other))
+
+//part2
+const reducer = arr => arr.reduce((a, b) => a + b, 0); 
+console.log(reducer(other))
 
 /************************************************************* */
 // Problem 6:
